@@ -1,0 +1,445 @@
+/* ============================================= */
+/* GERAL E VARIÁVEIS ROOT                      */
+/* ============================================= */
+
+:root {
+  --vermelho: #f44336;
+  --azul-noturno: #1a2a45;
+  --fundo: #dfe6e9; /* Tom de azul-gelo/cinza claro */
+}
+
+/* Toque final: cor da seleção de texto com as cores da marca */
+::selection {
+  background-color: var(--vermelho);
+  color: white;
+}
+
+body {
+  background-color: var(--fundo);
+  color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================= */
+/* COMPONENTES REUTILIZÁVEIS                   */
+/* ============================================= */
+
+.titulo-secao {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--azul-noturno);
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.titulo-secao::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--vermelho);
+  border-radius: 2px;
+}
+
+.descricao-secao {
+  text-align: center;
+  max-width: 700px;
+  margin: -30px auto 40px auto;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ============================================= */
+/* BARRA DE NAVEGAÇÃO                          */
+/* ============================================= */
+
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: white;
+  background-color: white;
+}
+.nav-laranja,
+.nav-azul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+}
+.nav-laranja {
+  background-color: var(--vermelho);
+  min-height: 60px;
+}
+.nav-azul {
+  background-color: var(--azul-noturno);
+  padding: 15px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+}
+.logo img {
+  height: 40px;
+}
+.logo span {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px 20px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+.nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar) {
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar):hover {
+  border-bottom-color: white;
+  transform: translateY(-2px);
+}
+.botao-nav-whats,
+.botao-nav-ligar {
+  padding: 8px 18px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+.botao-nav-whats {
+  background-color: #25d366;
+  border: 2px solid #25d366;
+}
+.botao-nav-ligar {
+  background-color: transparent;
+  border: 2px solid white;
+}
+.botao-nav-whats:hover,
+.botao-nav-ligar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.fa-brands.fa-whatsapp {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 768px) {
+  nav {
+    display: grid;
+    height: 75px;
+  }
+  .nav-laranja,
+  .nav-azul {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    padding: 0;
+  }
+  .nav-laranja {
+    clip-path: polygon(0% 0%, 52% 0%, 48% 100%, 0% 100%);
+    justify-content: flex-start;
+    padding-left: 4%;
+  }
+  .nav-azul {
+    clip-path: polygon(52% 0%, 100% 0%, 100% 100%, 48% 100%);
+    justify-content: flex-end;
+    padding-right: 4%;
+  }
+  .nav-links {
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+  .nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar) {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-laranja {
+    padding-left: 5%;
+  }
+  .nav-azul {
+    padding-right: 5%;
+  }
+  .logo img {
+    height: 45px;
+  }
+  .logo span {
+    font-size: 1.6rem;
+  }
+  .nav-links {
+    gap: 25px;
+  }
+  .nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar) {
+    display: flex;
+  }
+}
+
+/* ============================================= */
+/* SEÇÃO HERO                                  */
+/* ============================================= */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  flex-direction: column;
+  padding: 20px;
+  gap: 1.5rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("./img/guinchofundo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  background-image: linear-gradient(to right, #f44336, #e91e63);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  max-width: 20ch;
+}
+.destaque-h1 {
+  color: var(--vermelho);
+}
+.hero p {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  max-width: 600px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.botao-ligar {
+  display: inline-block;
+  background-color: var(--vermelho);
+  color: white;
+  padding: 1rem 2.5rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.botao-ligar:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+/* ============================================= */
+/* SEÇÃO DE SERVIÇOS                           */
+/* ============================================= */
+#servicos {
+  padding: 80px 20px;
+}
+.servicos-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(44, 62, 80, 0.1);
+}
+.servicos-fotos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.servicos-fotos img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.subtitulo-servicos {
+  font-size: 1.3rem;
+  color: var(--azul-noturno);
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.tipos-veiculos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+.tipo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.tipo-item .fas {
+  color: var(--vermelho);
+}
+.lista-diferenciais {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.lista-diferenciais li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lista-diferenciais .fa-check-circle {
+  color: #25d366;
+}
+
+@media (min-width: 768px) {
+  .servicos-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+  }
+}
+
+/* ============================================= */
+/* SEÇÃO DE AGENDAMENTO (FORMULÁRIO)           */
+/* ============================================= */
+#agendamento {
+  padding: 80px 20px;
+}
+#agendamento .descricao-secao strong {
+  color: var(--vermelho);
+}
+#formAgendamento {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(44, 62, 80, 0.1);
+}
+#formAgendamento input,
+#formAgendamento textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#formAgendamento input:focus,
+#formAgendamento textarea:focus {
+  outline: none;
+  border-color: var(--azul-noturno);
+  box-shadow: 0 0 0 3px rgba(26, 42, 69, 0.1);
+}
+#formAgendamento textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+#formAgendamento button[type="submit"] {
+  background-color: var(--vermelho);
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#formAgendamento button[type="submit"]:hover {
+  background-color: #d32f2f;
+  transform: translateY(-3px);
+}
+
+/* ============================================= */
+/* RODAPÉ (FOOTER)                             */
+/* ============================================= */
+#contato {
+  background-color: var(--azul-noturno);
+  color: #ecf0f1;
+  padding-top: 60px;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.footer-container h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: white;
+}
+.footer-info {
+  margin: 20px 0;
+}
+.footer-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+.footer-info .fas {
+  color: var(--vermelho);
+  margin-right: 10px;
+}
+.footer-social {
+  margin: 30px 0;
+}
+.footer-social a {
+  color: white;
+  font-size: 1.8rem;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: var(--vermelho);
+}
+.footer-bottom {
+  background-color: #122036;
+  padding: 15px 10px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #bdc3c7;
+}

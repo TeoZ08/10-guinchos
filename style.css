@@ -231,7 +231,11 @@ nav {
 .hero h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 700;
-  background-image: linear-gradient(to right, #f44336, #e91e63);
+  background-image: linear-gradient(
+    to right,
+    var(--vermelho),
+    var(--azul-noturno)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

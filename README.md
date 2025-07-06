@@ -1,1 +1,1 @@
-https://teoz08.github.io/tj-guinchos/
+https://teoz08.github.io/guincho-10/

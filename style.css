@@ -3,10 +3,11 @@
 /* ============================================= */
 
 :root {
-  --vermelho: #f44336;
-  --azul-noturno: #1a2a45;
-  --fundo: #dfe6e9; /* Tom de azul-gelo/cinza claro */
+  --vermelho: #64748b; /* Azul Acinzentado */
+  --azul-noturno: #475569; /* Grafite Suave */
+  --fundo: #f1f5f9; /* Cinza Bem Claro */
 }
+
 
 /* Toque final: cor da seleção de texto com as cores da marca */
 ::selection {

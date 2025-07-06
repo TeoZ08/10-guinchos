@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Serviço de guincho e reboque 24 horas em Campo Grande, MS. Atendimento rápido para carros, caminhonetes e pequenas máquinas. Socorro imediato!"
+      content="Guincho 10 - Serviço de guincho e reboque 24 horas em Campo Grande, MS. Atendimento rápido para carros, caminhonetes e pequenas máquinas."
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -20,20 +21,26 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>TJ Guinchos - Guincho 24 Horas em Campo Grande MS</title>
+
+    <title>Guincho 10 - Guincho 24 Horas em Campo Grande MS</title>
   </head>
   <body>
     <nav>
       <div class="nav-laranja">
         <a href="#" class="logo">
-          <img src="./img/logo.svg" alt="Logo da empresa TJ Guinchos" />
-          <span>TJ GUINCHOS</span>
+          <img src="./img/logo.png" alt="Logo da empresa Guincho 10" />
+          <span>GUINCHO 10</span>
         </a>
       </div>
       <div class="nav-azul">
         <div class="nav-links">
           <a href="#servicos">Serviços</a>
+          <a href="#diferenciais">Diferenciais</a>
           <a href="#agendamento">Agendamento</a>
           <a
             href="https://wa.me/5567998366943?text=Olá!%20Preciso%20de%20um%20guincho."
@@ -49,7 +56,7 @@
 
     <main>
       <section class="hero">
-        <h2>TJ GUINCHOS</h2>
+        <h2>GUINCHO 10</h2>
         <h1>
           Guincho para
           <span class="destaque-h1"
@@ -65,54 +72,146 @@
       </section>
 
       <section id="servicos">
-        <div class="servicos-container">
-          <div class="servicos-fotos">
-            <img
-              src="./img/exemplo1.jpg"
-              alt="Caminhonete sendo transportada por guincho plataforma"
-            />
-            <img
-              src="./img/exemplo2.jpg"
-              alt="Pequena máquina (trator) em cima do guincho"
-            />
-          </div>
-          <div class="servicos-info">
-            <h2 class="titulo-secao">Reboque Profissional 24 Horas</h2>
-            <p class="descricao-secao">
-              Especialistas em transporte de veículos com máxima segurança e
-              eficiência, cuidando do seu patrimônio como se fosse nosso.
-            </p>
-            <h3 class="subtitulo-servicos">Transportamos com segurança:</h3>
-            <div class="tipos-veiculos">
-              <div class="tipo-item">
-                <i class="fas fa-car"></i><span>Carros</span>
-              </div>
-              <div class="tipo-item">
-                <i class="fas fa-truck-pickup"></i><span>Caminhonetes</span>
-              </div>
-              <div class="tipo-item">
-                <i class="fas fa-tractor"></i><span>Pequenas Máquinas</span>
+        <h2 class="titulo-secao">Nossos Serviços em Ação</h2>
+        <p class="descricao-secao">
+          Veja fotos reais dos nossos serviços de guincho e reboque em Campo
+          Grande.
+        </p>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="service-card enquadramento-especial">
+                <img
+                  src="./img/exemplo1.jpg"
+                  alt="Transporte de carro esportivo"
+                />
+                <div class="card-overlay"><h3>Cuidado nos Detalhes</h3></div>
               </div>
             </div>
-            <h3 class="subtitulo-servicos">Nossos Diferenciais:</h3>
-            <ul class="lista-diferenciais">
-              <li>
-                <i class="fas fa-check-circle"></i> Atendimento rápido 24/7,
-                incluindo feriados
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Equipe qualificada e
-                cuidadosa
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Aceitamos PIX, Dinheiro e
-                Cartão
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Orçamento rápido e sem
-                compromisso
-              </li>
-            </ul>
+            <div class="swiper-slide">
+              <div class="service-card">
+                <img src="./img/exemplo2.jpg" alt="Reboque de maquinários" />
+                <div class="card-overlay">
+                  <h3>Transporte de Equipamentos</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="service-card">
+                <img
+                  src="./img/exemplo3.jpg"
+                  alt="Socorro 24 horas para veículo"
+                />
+                <div class="card-overlay">
+                  <h3>Versatilidade em Reboque</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="service-card">
+                <img
+                  src="./img/exemplo4.jpg"
+                  alt="Guincho com atendimento rápido"
+                />
+                <div class="card-overlay"><h3>Força para sua Pick-up</h3></div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="service-card">
+                <img
+                  src="./img/exemplo5.jpg"
+                  alt="combi transportada com segurança"
+                />
+                <div class="card-overlay">
+                  <h3>Cuidamos do seu Clássico</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="service-card">
+                <img
+                  src="./img/exemplo6.jpg"
+                  alt="Veículo transportado com segurança e cuidado"
+                />
+                <div class="card-overlay"><h3>Segurança e Cuidado</h3></div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="service-card">
+                <img src="./img/exemplo7.jpg" alt="carro" />
+                <div class="card-overlay"><h3>Sempre a Postos</h3></div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="service-card">
+                <img
+                  src="./img/exemplo8.jpg"
+                  alt="Serviço de guincho profissional"
+                />
+                <div class="card-overlay">
+                  <h3>Socorro para o Dia a Dia</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="service-card">
+                <img
+                  src="./img/exemplo9.jpg"
+                  alt="Serviço de guincho de confiança"
+                />
+                <div class="card-overlay"><h3>Qualidade Garantida</h3></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <section id="diferenciais">
+        <div class="diferenciais-container">
+          <h2 class="titulo-secao">Por que escolher o Guincho 10?</h2>
+          <p class="descricao-secao">
+            Especialistas em transporte de veículos com máxima segurança e
+            eficiência, cuidando do seu patrimônio como se fosse nosso.
+          </p>
+          <div class="diferenciais-grid">
+            <div class="coluna-veiculos">
+              <h3 class="subtitulo-servicos">Transportamos com segurança:</h3>
+              <div class="tipos-veiculos">
+                <div class="tipo-item">
+                  <i class="fas fa-car"></i><span>Carros</span>
+                </div>
+                <div class="tipo-item">
+                  <i class="fas fa-truck-pickup"></i><span>Caminhonetes</span>
+                </div>
+                <div class="tipo-item">
+                  <i class="fas fa-tractor"></i><span>Pequenas Máquinas</span>
+                </div>
+              </div>
+            </div>
+            <div class="coluna-vantagens">
+              <h3 class="subtitulo-servicos">Nossos Diferenciais:</h3>
+              <ul class="lista-diferenciais">
+                <li>
+                  <i class="fas fa-check-circle"></i> Atendimento rápido 24/7,
+                  incluindo feriados
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Equipe qualificada e
+                  cuidadosa
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Aceitamos PIX, Dinheiro e
+                  Cartão
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Orçamento rápido e sem
+                  compromisso
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -127,12 +226,12 @@
             topo da página.</strong
           >
         </p>
-        <form id="formAgendamento">
+        <form id="formAgendamento" autocomplete="off">
           <input type="text" name="nome" placeholder="Nome completo" required />
           <input
             type="tel"
             name="telefone"
-            placeholder="Seu telefone"
+            placeholder="Seu melhor telefone"
             required
           />
           <input
@@ -164,26 +263,31 @@
 
     <footer id="contato">
       <div class="footer-container">
-        <h3>TJ Guinchos</h3>
+        <h3>Guincho 10</h3>
         <p>Seu socorro de confiança em Campo Grande - MS.</p>
         <div class="footer-info">
           <p><i class="fas fa-map-marker-alt"></i> Rua Kame Takaiassu, 2036</p>
           <p><i class="fas fa-phone"></i> (67) 99836-6943</p>
         </div>
         <div class="footer-social">
-          <a href="https://instagram.com" target="_blank" title="Instagram">
+          <a
+            href="https://instagram.com/teoscotti_"
+            target="_blank"
+            title="Instagram"
+          >
             <i class="fab fa-instagram"></i>
           </a>
         </div>
       </div>
       <div class="footer-bottom">
         <p>
-          &copy; 2025 TJ Guinchos. Todos os direitos reservados. Desenvolvido
-          por @TeoZ08.
+          &copy; 2025 Guincho 10. Todos os direitos reservados. Desenvolvido por
+          @teoscotti_
         </p>
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

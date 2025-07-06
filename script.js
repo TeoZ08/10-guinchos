@@ -53,3 +53,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+// No final do seu script.js
+
+// --- INICIALIZAÇÃO DO CARROSSEL SWIPER ---
+const swiper = new Swiper(".mySwiper", {
+    // Quantos slides são visíveis por vez
+    slidesPerView: 1,
+    // Espaçamento entre os slides
+    spaceBetween: 30,
+    // Efeito de loop (o carrossel recomeça ao chegar no final)
+    loop: true,
+    // Centraliza o slide ativo
+    centeredSlides: true,
+    // Configurações da paginação (bolinhas)
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    // Configurações da navegação (setas)
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    // Configurações de responsividade
+    breakpoints: {
+        // Quando a tela for maior ou igual a 640px
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        // Quando a tela for maior ou igual a 1024px
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
+});

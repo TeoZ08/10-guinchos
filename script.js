@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// No final do seu script.js
 
 // --- INICIALIZAÇÃO DO CARROSSEL SWIPER ---
 const swiper = new Swiper(".mySwiper", {
@@ -89,4 +88,13 @@ const swiper = new Swiper(".mySwiper", {
             spaceBetween: 30,
         },
     },
+});
+
+
+
+// --- INICIALIZAÇÃO DA GALERIA LIGHTBOX ---
+const lightbox = GLightbox({
+    selector: ".glightbox", // Procura por todos os links com a classe "glightbox"
+    touchNavigation: true, // Permite navegar arrastando no celular
+    loop: true, // Permite voltar do último para o primeiro slide
 });

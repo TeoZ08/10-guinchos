@@ -3,17 +3,10 @@
 /* ============================================= */
 
 :root {
-<<<<<<< HEAD
   --vermelho: #f44336; /* Vermelho de emergência (original) */
   --azul-noturno: #1a2a45; /* Azul Noturno (original) */
   --fundo: #dfe6e9; /* Fundo cinza-azulado claro */
-=======
-  --vermelho: #64748b; /* Azul Acinzentado */
-  --azul-noturno: #475569; /* Grafite Suave */
-  --fundo: #f1f5f9; /* Cinza Bem Claro */
->>>>>>> 5e8d020486758235e6b615c6e580d2c101c79235
 }
-
 
 /* Toque final: cor da seleção de texto com as cores da marca */
 ::selection {
@@ -235,16 +228,8 @@ nav {
 .hero h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 700;
-<<<<<<< HEAD
   /* Gradiente Vermelho para Magenta que você preferiu */
   background-image: linear-gradient(to right, #f44336, #e91e63);
-=======
-  background-image: linear-gradient(
-    to right,
-    var(--vermelho),
-    var(--azul-noturno)
-  );
->>>>>>> 5e8d020486758235e6b615c6e580d2c101c79235
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

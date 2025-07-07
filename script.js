@@ -1,16 +1,19 @@
-// Aguarda o carregamento completo da página para garantir que o formulário exista
+// Aguarda o carregamento completo da página para garantir que os elementos existam
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Seleciona o formulário pelo ID que demos a ele no HTML
-    const form = document.getElementById('formAgendamento');
+    // --- LÓGICA DO FORMULÁRIO DE AGENDAMENTO ---
 
-    // Adiciona um "escutador" para o evento de 'submit' (quando o botão é clicado)
+    // Seleciona o formulário e o botão de envio
+    const form = document.getElementById('formAgendamento');
+    const formButton = document.querySelector('#formAgendamento button[type="submit"]');
+
+    // Adiciona um "escutador" para o evento de 'submit'
     form.addEventListener('submit', function (event) {
-        // 1. Previne o comportamento padrão do formulário, que seria recarregar a página
+        // 1. Previne o comportamento padrão do formulário (recarregar a página)
         event.preventDefault();
 
-        // 2. Pega o número de telefone
-        const numeroTelefone = "5567998366943"; // Formato: 55 (código do país) + DDD + número
+        // 2. Pega o número de telefone para contato
+        const numeroTelefone = "5567998366943"; // Formato: 55 (país) + DDD + número
 
         // 3. Coleta os valores de cada campo do formulário
         const nome = document.querySelector('input[name="nome"]').value;
@@ -20,8 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const veiculo = document.querySelector('input[name="veiculo"]').value;
         const detalhes = document.querySelector('textarea[name="detalhes"]').value;
 
-        // 4. Monta a mensagem de forma organizada e legível
-        // O `\n` é um caractere especial que cria uma quebra de linha no WhatsApp
+        // 4. Monta a mensagem para o WhatsApp de forma organizada
         const textoMensagem = `
   Olá! Gostaria de solicitar um orçamento/agendamento de guincho.
   
@@ -39,50 +41,52 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
 
         // 5. Codifica a mensagem para ser usada em um link de URL
-        // Isso transforma espaços em %20, quebras de linha em %0A, etc.
         const textoEncoded = encodeURIComponent(textoMensagem);
 
         // 6. Cria o link final para a API do WhatsApp
         const urlWhatsApp = `https://wa.me/${numeroTelefone}?text=${textoEncoded}`;
 
-        // 7. Abre o WhatsApp em uma nova aba com a mensagem pronta
+        // 7. Abre o WhatsApp em uma nova aba
         window.open(urlWhatsApp, '_blank');
 
-        // (Opcional) Limpa os campos do formulário depois do envio
+        // --- MELHORIA DE FEEDBACK PARA O USUÁRIO ---
+        // Guarda o texto original do botão
+        const originalButtonText = formButton.textContent;
+        // Muda o texto do botão e o desabilita para dar feedback e evitar cliques duplos
+        formButton.textContent = 'Mensagem pronta! Abrindo...';
+        formButton.disabled = true;
+
+        // Após 3 segundos, restaura o botão ao estado original
+        setTimeout(() => {
+            formButton.textContent = originalButtonText;
+            formButton.disabled = false;
+        }, 3000);
+
+        // Limpa os campos do formulário após o envio
         form.reset();
     });
-
 });
 
 
 // --- INICIALIZAÇÃO DO CARROSSEL SWIPER ---
 const swiper = new Swiper(".mySwiper", {
-    // Quantos slides são visíveis por vez
     slidesPerView: 1,
-    // Espaçamento entre os slides
     spaceBetween: 30,
-    // Efeito de loop (o carrossel recomeça ao chegar no final)
     loop: true,
-    // Centraliza o slide ativo
     centeredSlides: true,
-    // Configurações da paginação (bolinhas)
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
     },
-    // Configurações da navegação (setas)
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-    // Configurações de responsividade
     breakpoints: {
-        // Quando a tela for maior ou igual a 640px
         640: {
             slidesPerView: 2,
             spaceBetween: 20,
         },
-        // Quando a tela for maior ou igual a 1024px
         1024: {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -91,10 +95,9 @@ const swiper = new Swiper(".mySwiper", {
 });
 
 
-
-// --- INICIALIZAÇÃO DA GALERIA LIGHTBOX ---
+// --- INICIALIZAÇÃO DA GALERIA LIGHTBOX (GLIGHTBOX) ---
 const lightbox = GLightbox({
-    selector: ".glightbox", // Procura por todos os links com a classe "glightbox"
-    touchNavigation: true, // Permite navegar arrastando no celular
-    loop: true, // Permite voltar do último para o primeiro slide
+    selector: ".glightbox",
+    touchNavigation: true,
+    loop: true,
 });

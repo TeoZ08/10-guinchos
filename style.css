@@ -8,7 +8,6 @@
   --fundo: #dfe6e9; /* Fundo cinza-azulado claro */
 }
 
-/* Toque final: cor da seleção de texto com as cores da marca */
 ::selection {
   background-color: var(--vermelho);
   color: white;
@@ -228,7 +227,6 @@ nav {
 .hero h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 700;
-  /* Gradiente Vermelho para Magenta que você preferiu */
   background-image: linear-gradient(to right, #f44336, #e91e63);
   background-clip: text;
   -webkit-background-clip: text;
@@ -314,7 +312,7 @@ nav {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
-  transform: scale(1.15);
+  transform: scale(1.05); /* <<< NOVO ZOOM PADRÃO (MENOR) PARA MOBILE */
 }
 .service-card:hover img {
   transform: scale(1);
@@ -367,11 +365,9 @@ nav {
   background: var(--vermelho) !important;
   opacity: 1;
 }
-
-/* Muda o cursor para indicar que os slides são clicáveis */
 .swiper-slide a.glightbox {
   cursor: zoom-in;
-  display: block; /* Garante que o link ocupe todo o espaço do card */
+  display: block;
   width: 100%;
 }
 
@@ -453,7 +449,15 @@ nav {
   font-size: 1.2em;
 }
 
+/* ============================================= */
+/* AJUSTES RESPONSIVOS                           */
+/* ============================================= */
+
+/* --- TABLET (TELAS > 768px) --- */
 @media (min-width: 768px) {
+  .servicos-container {
+    grid-template-columns: 1fr 1fr;
+  }
   .diferenciais-grid {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -461,6 +465,10 @@ nav {
   }
   .diferenciais-container {
     padding: 50px;
+  }
+  /* <<< RESTAURA O ZOOM MAIOR PARA TELAS GRANDES */
+  .service-card img {
+    transform: scale(1.15);
   }
 }
 

@@ -9,7 +9,7 @@ Projeto de site institucional desenvolvido como freelancer para a empresa Guinch
 
 ---
 
-![Prévia do Site](https://user-images.githubusercontent.com/12473487/228876451-be4864f1-1e4a-4977-9263-ee6a19758797.png) 
+![Prévia do Site](screenshot.png)
 ---
 
 ## 📖 Sobre o Projeto

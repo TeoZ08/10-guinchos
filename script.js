@@ -65,39 +65,40 @@ document.addEventListener("DOMContentLoaded", function () {
         // Limpa os campos do formulário após o envio
         form.reset();
     });
-});
 
-
-// --- INICIALIZAÇÃO DO CARROSSEL SWIPER ---
-const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    centeredSlides: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
+    // --- INICIALIZAÇÃO DO CARROSSEL SWIPER ---
+    const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        centeredSlides: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
         },
-        1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
         },
-    },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+    });
+
+
+    // --- INICIALIZAÇÃO DA GALERIA LIGHTBOX (GLIGHTBOX) ---
+    const lightbox = GLightbox({
+        selector: ".glightbox",
+        touchNavigation: true,
+        loop: true,
+    });
 });
 
 
-// --- INICIALIZAÇÃO DA GALERIA LIGHTBOX (GLIGHTBOX) ---
-const lightbox = GLightbox({
-    selector: ".glightbox",
-    touchNavigation: true,
-    loop: true,
-});

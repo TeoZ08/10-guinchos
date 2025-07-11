@@ -1,39 +1,26 @@
 /* ============================================= */
 /* GERAL E VARIÁVEIS ROOT                      */
 /* ============================================= */
-
 :root {
-  --vermelho: #f44336; /* Vermelho de emergência (original) */
-  --azul-noturno: #1a2a45; /* Azul Noturno (original) */
-  --fundo: #dfe6e9; /* Fundo cinza-azulado claro */
+  --vermelho: #f44336;
+  --azul-noturno: #1a2a45;
+  --fundo: #dfe6e9;
 }
-
 ::selection {
   background-color: var(--vermelho);
   color: white;
 }
-
 body {
   background-color: var(--fundo);
-  color: #333;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  -webkit-tap-highlight-color: transparent;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+/* Os estilos que já estão no <head> como CSS Crítico foram removidos daqui */
+/* para evitar download duplicado. Apenas os estilos para as seções abaixo */
+/* da primeira dobra são mantidos aqui. */
 
 /* ============================================= */
 /* COMPONENTES REUTILIZÁVEIS                   */
 /* ============================================= */
-
 .titulo-secao {
   text-align: center;
   font-size: clamp(2rem, 5vw, 2.8rem);
@@ -42,7 +29,6 @@ html {
   position: relative;
   padding-bottom: 15px;
 }
-
 .titulo-secao::after {
   content: "";
   position: absolute;
@@ -54,7 +40,6 @@ html {
   background-color: var(--vermelho);
   border-radius: 2px;
 }
-
 .descricao-secao {
   text-align: center;
   max-width: 700px;
@@ -62,229 +47,46 @@ html {
   color: #555;
   line-height: 1.6;
 }
-
-/* ============================================= */
-/* BARRA DE NAVEGAÇÃO                          */
-/* ============================================= */
-nav {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  color: white;
-  background-color: white;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
-.nav-laranja,
-.nav-azul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 15px;
-}
-.nav-laranja {
-  background-color: var(--vermelho);
-  min-height: 60px;
-}
-.nav-azul {
-  background-color: var(--azul-noturno);
-  padding: 15px;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: white;
-}
-.logo img {
-  height: 40px;
-}
-.logo span {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 15px 20px;
-}
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.2s ease-in-out;
-}
-.nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar) {
-  padding-bottom: 3px;
-  border-bottom: 2px solid transparent;
-}
-.nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar):hover {
-  border-bottom-color: white;
-  transform: translateY(-2px);
-}
-.botao-nav-whats,
-.botao-nav-ligar {
-  padding: 8px 18px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-.botao-nav-whats {
-  background-color: #25d366;
-  border: 2px solid #25d366;
-}
-.botao-nav-ligar {
-  background-color: transparent;
-  border: 2px solid white;
-}
-.botao-nav-whats:active,
-.botao-nav-ligar:active {
-  transform: scale(0.95);
-  filter: brightness(0.9);
-}
-.botao-nav-whats:hover,
-.botao-nav-ligar:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-.fa-brands.fa-whatsapp {
-  font-size: 1.3rem;
-}
-
-@media (min-width: 768px) {
-  nav {
-    display: grid;
-    height: 75px;
-  }
-  .nav-laranja,
-  .nav-azul {
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-    padding: 0;
-  }
-  .nav-laranja {
-    clip-path: polygon(0% 0%, 52% 0%, 48% 100%, 0% 100%);
-    justify-content: flex-start;
-    padding-left: 4%;
-  }
-  .nav-azul {
-    clip-path: polygon(52% 0%, 100% 0%, 100% 100%, 48% 100%);
-    justify-content: flex-end;
-    padding-right: 4%;
-  }
-  .nav-links {
-    flex-wrap: nowrap;
-    gap: 20px;
-  }
-  .nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar) {
-    display: none;
-  }
-}
-
-@media (min-width: 1024px) {
-  .nav-laranja {
-    padding-left: 5%;
-  }
-  .nav-azul {
-    padding-right: 5%;
-  }
-  .logo img {
-    height: 45px;
-  }
-  .logo span {
-    font-size: 1.6rem;
-  }
-  .nav-links {
-    gap: 25px;
-  }
-  .nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar) {
-    display: flex;
-  }
-}
-
-/* ============================================= */
-/* SEÇÃO HERO                                  */
-/* ============================================= */
-.hero {
-  min-height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  flex-direction: column;
-  padding: 20px;
-  gap: 1.5rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("./img/guinchofundo.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.hero h2 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700;
-  background-image: linear-gradient(to right, #f44336, #e91e63);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-  max-width: 25ch;
-}
-.destaque-h1 {
-  color: var(--vermelho);
-}
-.hero p {
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  max-width: 600px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.botao-ligar {
-  display: inline-block;
-  background-color: var(--vermelho);
-  color: white;
-  padding: 1rem 2.5rem;
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-.botao-ligar:hover {
-  transform: scale(1.05);
-}
-.botao-ligar:active {
-  transform: scale(0.98);
-  filter: brightness(0.9);
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--vermelho);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 /* ============================================= */
 /* SEÇÃO DE SERVIÇOS (CARROSSEL)               */
 /* ============================================= */
+/* 1. Garante que o container principal seja a referência */
+.swiper.mySwiper {
+  position: relative; /* Essencial para o posicionamento da paginação */
+  padding-bottom: 100px; /* Cria um espaço na parte de baixo para as bolinhas */
+}
+
 #servicos {
   padding: 80px 0;
   background-color: white;
 }
 .swiper {
   width: 100%;
-  height: 100%;
   padding: 10px 0 50px 0;
   max-width: 1400px;
 }
 .swiper-slide {
   text-align: center;
-  font-size: 18px;
   background: transparent;
   display: flex;
   justify-content: center;
@@ -299,6 +101,7 @@ nav {
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  will-change: transform;
 }
 .service-card:hover {
   transform: scale(1.03);
@@ -306,13 +109,15 @@ nav {
 .service-card:active {
   transform: scale(1);
   transition: transform 0.1s;
+  will-change: transform;
 }
 .service-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
-  transform: scale(1.05); /* <<< NOVO ZOOM PADRÃO (MENOR) PARA MOBILE */
+  will-change: transform;
+  transform: scale(1.05);
 }
 .service-card:hover img {
   transform: scale(1);
@@ -335,34 +140,33 @@ nav {
   font-weight: 700;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--vermelho) !important;
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  color: var(--vermelho);
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
-  width: 50px !important;
-  height: 50px !important;
+  width: 50px;
+  height: 50px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s, color 0.2s;
+  will-change: transform;
 }
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 1.5rem !important;
+.mySwiper .swiper-button-next::after,
+.mySwiper .swiper-button-prev::after {
+  font-size: 1.5rem;
   font-weight: 800;
 }
-.swiper-button-next:focus,
-.swiper-button-prev:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  filter: drop-shadow(0 0 5px var(--vermelho)) !important;
+.mySwiper .swiper-button-next:hover,
+.mySwiper .swiper-button-prev:hover {
+  background-color: var(--vermelho);
+  color: white;
 }
-.swiper-pagination-bullet {
-  background: var(--azul-noturno) !important;
-  width: 12px !important;
-  height: 12px !important;
+.mySwiper .swiper-pagination-bullet {
+  background: var(--azul-noturno);
   opacity: 0.5;
 }
-.swiper-pagination-bullet-active {
-  background: var(--vermelho) !important;
+.mySwiper .swiper-pagination-bullet-active {
+  background: var(--vermelho);
   opacity: 1;
 }
 .swiper-slide a.glightbox {
@@ -371,11 +175,40 @@ nav {
   width: 100%;
 }
 
+/* 2. Restaura o posicionamento correto da paginação */
+.mySwiper .swiper-pagination {
+  position: absolute; /* Faz as bolinhas 'flutuarem' sobre o container */
+  bottom: 10px; /* Posiciona na parte de baixo do espaço que criamos */
+  left: 0;
+  width: 100%;
+}
+
+/* ============================================= */
+/* MELHORIA NA PAGINAÇÃO DO SWIPER               */
+/* ============================================= */
+.mySwiper .swiper-pagination-bullet {
+  width: 12px; /* Aumenta a largura da bolinha */
+  height: 12px; /* Aumenta a altura da bolinha */
+  margin: 0 5px !important; /* Adiciona um espaçamento maior entre elas */
+}
+
+/* ============================================= */
+/* CORREÇÃO DE ALINHAMENTO DOS BOTÕES DO CARROSSEL */
+/* ============================================= */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  /* O padrão do Swiper é top: 50%. Com nosso padding, isso fica alto demais.
+     Ajustamos para compensar o espaço da paginação e centralizar
+     os botões em relação às imagens. */
+  top: 45%;
+}
+
 /* ============================================= */
 /* SEÇÃO DE DIFERENCIAIS                       */
 /* ============================================= */
 #diferenciais {
   padding: 80px 20px;
+  background-color: var(--fundo);
 }
 .diferenciais-container {
   max-width: 1200px;
@@ -416,7 +249,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .area-item {
   display: flex;
@@ -450,33 +283,11 @@ nav {
 }
 
 /* ============================================= */
-/* AJUSTES RESPONSIVOS                           */
-/* ============================================= */
-
-/* --- TABLET (TELAS > 768px) --- */
-@media (min-width: 768px) {
-  .servicos-container {
-    grid-template-columns: 1fr 1fr;
-  }
-  .diferenciais-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: flex-start;
-  }
-  .diferenciais-container {
-    padding: 50px;
-  }
-  /* <<< RESTAURA O ZOOM MAIOR PARA TELAS GRANDES */
-  .service-card img {
-    transform: scale(1.15);
-  }
-}
-
-/* ============================================= */
 /* SEÇÃO DE AGENDAMENTO (FORMULÁRIO)           */
 /* ============================================= */
 #agendamento {
   padding: 80px 20px;
+  background-color: var(--fundo);
 }
 #agendamento .descricao-secao strong {
   color: var(--vermelho);
@@ -501,6 +312,7 @@ nav {
   border: 1px solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 #formAgendamento input:focus,
 #formAgendamento textarea:focus {
@@ -522,6 +334,7 @@ nav {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  will-change: transform;
 }
 #formAgendamento button[type="submit"]:hover {
   transform: translateY(-3px);
@@ -565,6 +378,7 @@ nav {
   font-size: 1.8rem;
   margin: 0 15px;
   transition: color 0.3s ease;
+  will-change: transform;
 }
 .footer-social a:hover {
   color: var(--vermelho);
@@ -576,4 +390,23 @@ nav {
   font-size: 0.9rem;
   text-align: center;
   color: #bdc3c7;
+}
+
+/* ============================================= */
+/* AJUSTES RESPONSIVOS (TABLET E DESKTOP)      */
+/* ============================================= */
+@media (min-width: 768px) {
+  /* SERVIÇOS */
+  .service-card img {
+    transform: scale(1.15);
+  }
+  /* DIFERENCIAIS */
+  .diferenciais-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+  }
+  .diferenciais-container {
+    padding: 50px;
+  }
 }

@@ -7,6 +7,23 @@
       name="description"
       content="Guincho 10 - Serviço de guincho 24 horas em Campo Grande, MS. Atendimento rápido para carros, caminhonetes e pequenas máquinas."
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
+    /></noscript>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,27 +33,280 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href="./img/guinchofundo.webp"
+      type="image/webp"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      :root {
+        --vermelho: #f44336;
+        --azul-noturno: #1a2a45;
+        --fundo: #dfe6e9;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: var(--fundo);
+        color: #333;
+      }
+      nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        color: white;
+        background-color: white;
+      }
+      .nav-laranja,
+      .nav-azul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 15px;
+      }
+      .nav-laranja {
+        background-color: var(--vermelho);
+        min-height: 60px;
+      }
+      .nav-azul {
+        background-color: var(--azul-noturno);
+        padding: 15px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: white;
+      }
+      .logo img {
+        height: 40px;
+        width: auto;
+      }
+      .logo span {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px 20px;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.2s ease-in-out;
+        will-change: transform;
+      }
+      .nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar) {
+        padding-bottom: 3px;
+        border-bottom: 2px solid transparent;
+      }
+      .nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar):hover {
+        border-bottom-color: white;
+        transform: translateY(-2px);
+      }
+      .botao-nav-whats,
+      .botao-nav-ligar {
+        padding: 8px 18px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      }
+      .botao-nav-whats {
+        background-color: #25d366;
+        border: 2px solid #25d366;
+      }
+      .botao-nav-ligar {
+        background-color: transparent;
+        border: 2px solid white;
+      }
+      .botao-nav-whats:active,
+      .botao-nav-ligar:active {
+        transform: scale(0.95);
+        filter: brightness(0.9);
+      }
+      .botao-nav-whats:hover,
+      .botao-nav-ligar:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .fa-brands.fa-whatsapp {
+        font-size: 1.3rem;
+      }
+      .hero {
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 1.5rem;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(./img/guinchofundo.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 5.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        max-width: 25ch;
+      }
+      .hero h2 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        font-weight: 700;
+        background-image: linear-gradient(to right, #f44336, #e91e63);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .hero p {
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        max-width: 600px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      .botao-ligar {
+        display: inline-block;
+        background-color: var(--vermelho);
+        color: white;
+        padding: 1rem 2.5rem;
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s;
+        will-change: transform;
+      }
+      .botao-ligar:hover {
+        transform: scale(1.05);
+      }
+      .botao-ligar:active {
+        transform: scale(0.98);
+        filter: brightness(0.9);
+      }
+      .destaque-h1 {
+        color: var(--vermelho);
+      }
+      @media (min-width: 768px) {
+        nav {
+          display: grid;
+          height: 75px;
+        }
+        .nav-laranja,
+        .nav-azul {
+          grid-column: 1 / -1;
+          grid-row: 1 / -1;
+          padding: 0;
+        }
+        .nav-laranja {
+          clip-path: polygon(0% 0%, 52% 0%, 48% 100%, 0% 100%);
+          justify-content: flex-start;
+          padding-left: 4%;
+        }
+        .nav-azul {
+          clip-path: polygon(52% 0%, 100% 0%, 100% 100%, 48% 100%);
+          justify-content: flex-end;
+          padding-right: 4%;
+        }
+        .nav-links {
+          flex-wrap: nowrap;
+          gap: 20px;
+        }
+        .nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar) {
+          display: none;
+        }
+      }
+      @media (min-width: 1024px) {
+        .nav-laranja {
+          padding-left: 5%;
+        }
+        .nav-azul {
+          padding-right: 5%;
+        }
+        .logo img {
+          height: 45px;
+        }
+        .logo span {
+          font-size: 1.6rem;
+        }
+        .nav-links {
+          gap: 25px;
+        }
+        .nav-links a:not(.botao-nav-whats):not(.botao-nav-ligar) {
+          display: flex;
+        }
+      }
+    </style>
+
     <link
-      rel="stylesheet"
+      rel="preload"
+      href="style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="style.css" /></noscript>
+    <noscript><link rel="stylesheet" href="style.css" /></noscript>
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    /></noscript>
+    <link
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /></noscript>
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link rel="stylesheet" href="style.css" />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    /></noscript>
 
     <title>Guincho 10 - Guincho 24 Horas em Campo Grande e Região</title>
   </head>
@@ -44,7 +314,12 @@
     <nav>
       <div class="nav-laranja">
         <a href="#" class="logo">
-          <img src="./img/logo.png" alt="Logo da empresa Guincho 10" />
+          <img
+            src="./img/logo.webp"
+            alt="Logo da empresa Guincho 10"
+            width="50"
+            height="50"
+          />
           <span>GUINCHO 10</span>
         </a>
       </div>
@@ -57,6 +332,7 @@
             href="https://wa.me/5567998366943?text=Olá!%20Preciso%20de%20um%20guincho."
             target="_blank"
             class="botao-nav-whats"
+            rel="noopener"
           >
             <i class="fa-brands fa-whatsapp"></i> WhatsApp
           </a>
@@ -64,7 +340,6 @@
         </div>
       </div>
     </nav>
-
     <main>
       <section class="hero">
         <h2>GUINCHO 10</h2>
@@ -75,53 +350,88 @@
         </p>
         <a href="tel:+5567998366943" class="botao-ligar">📞 Chamar Guincho</a>
       </section>
-
       <section id="servicos">
         <h2 class="titulo-secao">Nossos Serviços em Ação</h2>
         <p class="descricao-secao">
           Clique em uma imagem para ver os detalhes.
         </p>
+
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <a
-                href="./img/exemplo1.jpg"
+                href="./img/exemplo1-large.webp"
                 class="glightbox"
                 data-gallery="servicos-gallery"
               >
                 <div class="service-card enquadramento-especial">
                   <img
-                    src="./img/exemplo1.jpg"
-                    alt="Transporte de carro esportivo"
+                    srcset="
+                      ./img/exemplo1-small.webp   400w,
+                      ./img/exemplo1-medium.webp  800w,
+                      ./img/exemplo1-large.webp  1200w
+                    "
+                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 33vw"
+                    src="./img/exemplo1-medium.webp"
+                    alt="Transporte de carro esportivo com cuidado"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                   />
                   <div class="card-overlay"><h3>Cuidado nos Detalhes</h3></div>
                 </div>
               </a>
             </div>
+
             <div class="swiper-slide">
               <a
-                href="./img/exemplo2.jpg"
+                href="./img/exemplo2-large.webp"
                 class="glightbox"
                 data-gallery="servicos-gallery"
               >
                 <div class="service-card">
-                  <img src="./img/exemplo2.jpg" alt="Reboque de caminhonete" />
+                  <img
+                    srcset="
+                      ./img/exemplo2-small.webp   400w,
+                      ./img/exemplo2-medium.webp  800w,
+                      ./img/exemplo2-large.webp  1200w
+                    "
+                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 33vw"
+                    src="./img/exemplo2-medium.webp"
+                    alt="Transporte de equipamentos e máquinas"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
+                  />
                   <div class="card-overlay">
                     <h3>Transporte de Equipamentos</h3>
                   </div>
                 </div>
               </a>
             </div>
+
             <div class="swiper-slide">
               <a
-                href="./img/exemplo3.jpg"
+                href="./img/exemplo3-large.webp"
                 class="glightbox"
                 data-gallery="servicos-gallery"
               >
                 <div class="service-card">
                   <img
-                    src="./img/exemplo3.jpg"
-                    alt="Socorro 24 horas para veículo"
+                    srcset="
+                      ./img/exemplo3-small.webp   400w,
+                      ./img/exemplo3-medium.webp  800w,
+                      ./img/exemplo3-large.webp  1200w
+                    "
+                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 33vw"
+                    src="./img/exemplo3-medium.webp"
+                    alt="Reboque versátil para cargas complexas"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                   />
                   <div class="card-overlay">
                     <h3>Versatilidade em Reboque</h3>
@@ -129,16 +439,27 @@
                 </div>
               </a>
             </div>
+
             <div class="swiper-slide">
               <a
-                href="./img/exemplo4.jpg"
+                href="./img/exemplo4-large.webp"
                 class="glightbox"
                 data-gallery="servicos-gallery"
               >
                 <div class="service-card">
                   <img
-                    src="./img/exemplo4.jpg"
-                    alt="Guincho com atendimento rápido"
+                    srcset="
+                      ./img/exemplo4-small.webp   400w,
+                      ./img/exemplo4-medium.webp  800w,
+                      ./img/exemplo4-large.webp  1200w
+                    "
+                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 33vw"
+                    src="./img/exemplo4-medium.webp"
+                    alt="Reboque de caminhonetes e pick-ups"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                   />
                   <div class="card-overlay">
                     <h3>Força para sua Pick-up</h3>
@@ -146,16 +467,27 @@
                 </div>
               </a>
             </div>
+
             <div class="swiper-slide">
               <a
-                href="./img/exemplo5.jpg"
+                href="./img/exemplo5-large.webp"
                 class="glightbox"
                 data-gallery="servicos-gallery"
               >
                 <div class="service-card">
                   <img
-                    src="./img/exemplo5.jpg"
-                    alt="Transporte de pequenas máquinas"
+                    srcset="
+                      ./img/exemplo5-small.webp   400w,
+                      ./img/exemplo5-medium.webp  800w,
+                      ./img/exemplo5-large.webp  1200w
+                    "
+                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 33vw"
+                    src="./img/exemplo5-medium.webp"
+                    alt="Transporte de carros clássicos e utilitários"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                   />
                   <div class="card-overlay">
                     <h3>Cuidamos do seu Clássico</h3>
@@ -163,43 +495,79 @@
                 </div>
               </a>
             </div>
+
             <div class="swiper-slide">
               <a
-                href="./img/exemplo6.jpg"
+                href="./img/exemplo6-large.webp"
                 class="glightbox"
                 data-gallery="servicos-gallery"
               >
                 <div class="service-card">
                   <img
-                    src="./img/exemplo6.jpg"
-                    alt="Veículo transportado com segurança e cuidado"
+                    srcset="
+                      ./img/exemplo6-small.webp   400w,
+                      ./img/exemplo6-medium.webp  800w,
+                      ./img/exemplo6-large.webp  1200w
+                    "
+                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 33vw"
+                    src="./img/exemplo6-medium.webp"
+                    alt="Reboque para construção civil e obras"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                   />
                   <div class="card-overlay"><h3>Apoio para sua Obra</h3></div>
                 </div>
               </a>
             </div>
+
             <div class="swiper-slide">
               <a
-                href="./img/exemplo7.jpg"
-                class="glightbox"
-                data-gallery="servicos-gallery"
-              >
-                <div class="service-card">
-                  <img src="./img/exemplo7.jpg" alt="Transporte de motos" />
-                  <div class="card-overlay"><h3>Agilidade 24 Horas</h3></div>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a
-                href="./img/exemplo8.jpg"
+                href="./img/exemplo7-large.webp"
                 class="glightbox"
                 data-gallery="servicos-gallery"
               >
                 <div class="service-card">
                   <img
-                    src="./img/exemplo8.jpg"
-                    alt="Serviço de guincho profissional"
+                    srcset="
+                      ./img/exemplo7-small.webp   400w,
+                      ./img/exemplo7-medium.webp  800w,
+                      ./img/exemplo7-large.webp  1200w
+                    "
+                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 33vw"
+                    src="./img/exemplo7-medium.webp"
+                    alt="Atendimento de guincho 24 horas"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
+                  />
+                  <div class="card-overlay"><h3>Agilidade 24 Horas</h3></div>
+                </div>
+              </a>
+            </div>
+
+            <div class="swiper-slide">
+              <a
+                href="./img/exemplo8-large.webp"
+                class="glightbox"
+                data-gallery="servicos-gallery"
+              >
+                <div class="service-card">
+                  <img
+                    srcset="
+                      ./img/exemplo8-small.webp   400w,
+                      ./img/exemplo8-medium.webp  800w,
+                      ./img/exemplo8-large.webp  1200w
+                    "
+                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 33vw"
+                    src="./img/exemplo8-medium.webp"
+                    alt="Carro de passeio sendo transportado com segurança"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                   />
                   <div class="card-overlay">
                     <h3>Seu Carro em Segurança</h3>
@@ -207,16 +575,27 @@
                 </div>
               </a>
             </div>
+
             <div class="swiper-slide">
               <a
-                href="./img/exemplo9.jpg"
+                href="./img/exemplo9-large.webp"
                 class="glightbox"
                 data-gallery="servicos-gallery"
               >
                 <div class="service-card">
                   <img
-                    src="./img/exemplo9.jpg"
+                    srcset="
+                      ./img/exemplo9-small.webp   400w,
+                      ./img/exemplo9-medium.webp  800w,
+                      ./img/exemplo9-large.webp  1200w
+                    "
+                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 33vw"
+                    src="./img/exemplo9-medium.webp"
                     alt="Serviço de guincho de confiança"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                   />
                   <div class="card-overlay"><h3>Serviço de Confiança</h3></div>
                 </div>
@@ -228,7 +607,6 @@
           <div class="swiper-pagination"></div>
         </div>
       </section>
-
       <section id="diferenciais">
         <div class="diferenciais-container">
           <h2 class="titulo-secao">Por que escolher o Guincho 10?</h2>
@@ -289,44 +667,59 @@
           </div>
         </div>
       </section>
-
       <section id="agendamento">
         <h2 class="titulo-secao">Orçamento e Agendamento</h2>
         <p class="descricao-secao">
           Precisa transportar um veículo com data marcada? Preencha o formulário
-          abaixo para agendar um serviço. <br />
-          <strong
-            >Para emergências, por favor, use os botões de Ligar ou WhatsApp no
-            topo da página.</strong
+          abaixo. <br /><strong
+            >Para emergências, use os botões de Ligar ou WhatsApp no topo da
+            página.</strong
           >
         </p>
         <form id="formAgendamento" autocomplete="off">
-          <input type="text" name="nome" placeholder="Nome completo" required />
-          <input
+          <label for="nome" class="sr-only">Nome completo</label
+          ><input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Nome completo"
+            required
+          />
+          <label for="telefone" class="sr-only">Seu telefone</label
+          ><input
             type="tel"
+            id="telefone"
             name="telefone"
             placeholder="Seu telefone"
             required
           />
-          <input
+          <label for="origem" class="sr-only">Endereço de Retirada</label
+          ><input
             type="text"
+            id="origem"
             name="origem"
             placeholder="Endereço de Retirada"
             required
           />
-          <input
+          <label for="destino" class="sr-only">Endereço de Entrega</label
+          ><input
             type="text"
+            id="destino"
             name="destino"
             placeholder="Endereço de Entrega"
             required
           />
-          <input
+          <label for="veiculo" class="sr-only">Modelo do Veículo</label
+          ><input
             type="text"
+            id="veiculo"
             name="veiculo"
             placeholder="Modelo do Veículo"
             required
           />
-          <textarea
+          <label for="detalhes" class="sr-only">Detalhes adicionais</label
+          ><textarea
+            id="detalhes"
             name="detalhes"
             placeholder="Algum detalhe adicional? (Opcional)"
           ></textarea>
@@ -334,7 +727,6 @@
         </form>
       </section>
     </main>
-
     <footer id="contato">
       <div class="footer-container">
         <h3>Guincho 10</h3>
@@ -348,9 +740,9 @@
             href="https://instagram.com/guincho10_"
             target="_blank"
             title="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
+            rel="noopener"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -360,9 +752,14 @@
         </p>
       </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
